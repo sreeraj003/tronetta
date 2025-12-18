@@ -1,18 +1,28 @@
-"use client"
+"use client";
 
-import { Star, MessageCircle, Globe, Award, Truck, Shield, Eye, Download, Zap } from "lucide-react"
-import { useState, useEffect } from "react"
+import {
+  Star,
+  MessageCircle,
+  Globe,
+  Award,
+  Truck,
+  Shield,
+  Eye,
+  Download,
+  Zap,
+} from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function App() {
-  const [scrollY, setScrollY] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
+  const [scrollY, setScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    setIsVisible(true)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    setIsVisible(true);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const marbleProducts = [
     {
@@ -20,7 +30,8 @@ export default function App() {
       origin: "Tuscany, Italy",
       price: "From $45/sqft",
       image: "images/city1.jpg",
-      description: "The epitome of luxury, featuring subtle gray veining on pristine white background",
+      description:
+        "The epitome of luxury, featuring subtle gray veining on pristine white background",
       specifications: {
         density: "2.7 g/cm³",
         absorption: "0.2%",
@@ -37,14 +48,19 @@ export default function App() {
       origin: "Valencia, Spain",
       price: "From $38/sqft",
       image: "images/city2.jpg",
-      description: "Rich chocolate brown with golden veining, perfect for dramatic interiors",
+      description:
+        "Rich chocolate brown with golden veining, perfect for dramatic interiors",
       specifications: {
         density: "2.72 g/cm³",
         absorption: "0.15%",
         compressive: "140 MPa",
         flexural: "16.2 MPa",
       },
-      applications: ["Bathroom Vanities", "Feature Walls", "Fireplace Surrounds"],
+      applications: [
+        "Bathroom Vanities",
+        "Feature Walls",
+        "Fireplace Surrounds",
+      ],
       finish: ["Polished", "Honed", "Leather"],
       sizes: ["12x24", "24x24", "36x36", "Custom Slabs"],
     },
@@ -53,7 +69,8 @@ export default function App() {
       origin: "Carrara, Italy",
       price: "From $65/sqft",
       image: "images/city3.jpg",
-      description: "Dramatic gold and gray veining on white base, the ultimate luxury statement",
+      description:
+        "Dramatic gold and gray veining on white base, the ultimate luxury statement",
       specifications: {
         density: "2.71 g/cm³",
         absorption: "0.18%",
@@ -70,7 +87,8 @@ export default function App() {
       origin: "Denizli, Turkey",
       price: "From $28/sqft",
       image: "images/city1.jpg",
-      description: "Timeless beige tones with natural pitting, ideal for Mediterranean aesthetics",
+      description:
+        "Timeless beige tones with natural pitting, ideal for Mediterranean aesthetics",
       specifications: {
         density: "2.51 g/cm³",
         absorption: "2.1%",
@@ -86,7 +104,8 @@ export default function App() {
       origin: "Bilbao, Spain",
       price: "From $42/sqft",
       image: "images/city2.jpg",
-      description: "Intense black background with striking white veining for bold designs",
+      description:
+        "Intense black background with striking white veining for bold designs",
       specifications: {
         density: "2.73 g/cm³",
         absorption: "0.12%",
@@ -102,7 +121,8 @@ export default function App() {
       origin: "Balochistan, Pakistan",
       price: "From $55/sqft",
       image: "images/city3.jpg",
-      description: "Stunning translucent properties with honey and amber tones, perfect for backlighting",
+      description:
+        "Stunning translucent properties with honey and amber tones, perfect for backlighting",
       specifications: {
         density: "2.65 g/cm³",
         absorption: "0.8%",
@@ -114,22 +134,28 @@ export default function App() {
       sizes: ["Custom Slabs Only"],
       featured: true,
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-background">
       {/* Header with scroll animation */}
       <header
-        className={`border-b border-b-transparent border-border bg-background/95 backdrop-blur  supports-[backdrop-filter]:bg-white/60 bg-white/80 sticky top-0 z-50 transition-all duration-300 ${scrollY > 50 ? "py-2 shadow-lg" : "py-4"}`}
+        className={`border-b border-b-transparent border-border bg-background/95 backdrop-blur  supports-[backdrop-filter]:bg-white/60 bg-white/80 sticky top-0 z-50 transition-all duration-300 ${
+          scrollY > 50 ? "py-2 shadow-lg" : "py-4"
+        }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div
-            className={`flex items-center space-x-2 transition-all duration-300 ${scrollY > 50 ? "scale-90" : "scale-100"}`}
+            className={`flex items-center space-x-2 transition-all duration-300 ${
+              scrollY > 50 ? "scale-90" : "scale-100"
+            }`}
           >
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground bg-[#008994] text-white rounded-md p-3 py-1 font-bold text-lg">L</span>
+              <span className="text-primary-foreground bg-[#008994] text-white rounded-md p-3 py-1 font-bold text-lg">
+                L
+              </span>
             </div>
-            <span className="text-xl font-bold text-foreground">Luxe Stone Exports</span>
+            <span className="text-xl font-bold text-foreground">Tronetta</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <a
@@ -175,14 +201,19 @@ export default function App() {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div
-          className={`relative z-10 text-center text-white max-w-4xl mx-auto px-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`relative z-10 text-center text-white max-w-4xl mx-auto px-4 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Premium Marble & Tiles
-            <span className="block text-primary animate-pulse">Worldwide Export</span>
+            <span className="block text-primary animate-pulse">
+              Worldwide Export
+            </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
-            Discover our exquisite collection of natural stones, crafted for luxury projects across the globe
+            Discover our exquisite collection of natural stones, crafted for
+            luxury projects across the globe
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
@@ -192,13 +223,13 @@ export default function App() {
               <MessageCircle className="mr-2 h-5 w-5" />
               WhatsApp Us Now
             </button>
-            <button
+            {/* <button
               size="lg"
               variant="outline"
               className="text-lg px-4 py-2 rounded-md border-white text-white hover:bg-white hover:scale-50 hover:text-black bg-transparent  transform transition-all duration-200"
             >
               View Catalog
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
@@ -249,13 +280,15 @@ export default function App() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Premium Collection</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Explore our carefully curated selection of the world's finest marble and tiles with detailed
-              specifications
+              Explore our carefully curated selection of the world's finest
+              marble and tiles with detailed specifications
             </p>
           </div>
 
           <div className="mb-16">
-            <h3 className="text-2xl font-semibold mb-8 text-center">Featured Premium Stones</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-center">
+              Featured Premium Stones
+            </h3>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {marbleProducts
                 .filter((product) => product.featured)
@@ -270,29 +303,50 @@ export default function App() {
                         alt={product.name}
                         className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                       />
-                      <div className="absolute top-4 px-2 text-[14px] rounded-md left-4 bg-primary animate-pulse">{product.origin}</div>
-                      <div className="absolute top-4 right-4 rounded-md px-2 text-[12px] text-white bg-yellow-600">Featured</div>
+                      <div className="absolute top-4 px-2 text-[14px] rounded-md left-4 bg-primary animate-pulse">
+                        {product.origin}
+                      </div>
+                      <div className="absolute top-4 right-4 rounded-md px-2 text-[12px] text-white bg-yellow-600">
+                        Featured
+                      </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-4 left-4 right-4 text-white">
-                          <p className="text-sm font-medium">{product.description}</p>
+                          <p className="text-sm font-medium">
+                            {product.description}
+                          </p>
                         </div>
                       </div>
                     </div>
                     <div className="p-6 bg-[#e8e8e840]">
-                      <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                      <p className="text-2xl font-bold text-primary mb-4">{product.price}</p>
+                      <h3 className="text-xl font-semibold mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-2xl font-bold text-primary mb-4">
+                        {product.price}
+                      </p>
                       <div className="space-y-2 text-gray-500 mb-4">
                         <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Density:</span>
-                          <span className="font-medium">{product.specifications.density}</span>
+                          <span className="text-muted-foreground">
+                            Density:
+                          </span>
+                          <span className="font-medium">
+                            {product.specifications.density}
+                          </span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Absorption:</span>
-                          <span className="font-medium">{product.specifications.absorption}</span>
+                          <span className="text-muted-foreground">
+                            Absorption:
+                          </span>
+                          <span className="font-medium">
+                            {product.specifications.absorption}
+                          </span>
                         </div>
                       </div>
                       <div className="flex gap-2 mb-4">
-                        <button size="sm" className="flex-1 flex bg-primary text-[12px] py-1 rounded-md justify-center items-center  hover:scale-105 transform transition-all duration-200">
+                        <button
+                          size="sm"
+                          className="flex-1 flex bg-primary text-[12px] py-1 rounded-md justify-center items-center  hover:scale-105 transform transition-all duration-200"
+                        >
                           <Eye className="mr-1 h-4 w-4" />
                           View Details
                         </button>
@@ -322,11 +376,19 @@ export default function App() {
                     alt={product.name}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 px-2 text-[14px] rounded-md bg-primary">{product.origin}</div>
-                  {product.featured && <div className="absolute top-4 right-4 rounded-md px-2 text-[12px] text-white bg-yellow-600">Featured</div>}
+                  <div className="absolute top-4 left-4 px-2 text-[14px] rounded-md bg-primary">
+                    {product.origin}
+                  </div>
+                  {product.featured && (
+                    <div className="absolute top-4 right-4 rounded-md px-2 text-[12px] text-white bg-yellow-600">
+                      Featured
+                    </div>
+                  )}
 
                   <div className="absolute  inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-4 text-white text-sm">
-                    <h4 className="font-semibold mb-2">Technical Specifications</h4>
+                    <h4 className="font-semibold mb-2">
+                      Technical Specifications
+                    </h4>
                     <div className="space-y-1 mb-3">
                       <div className="flex justify-between">
                         <span>Density:</span>
@@ -344,7 +406,11 @@ export default function App() {
                     <h4 className="font-semibold mb-1">Applications</h4>
                     <div className="flex flex-wrap gap-1">
                       {product.applications.slice(0, 3).map((app, i) => (
-                        <div key={i} variant="secondary" className=" px-2 bg-white text-black p-1 text-[12px] rounded-sm">
+                        <div
+                          key={i}
+                          variant="secondary"
+                          className=" px-2 bg-white text-black p-1 text-[12px] rounded-sm"
+                        >
                           {app}
                         </div>
                       ))}
@@ -353,14 +419,24 @@ export default function App() {
                 </div>
                 <div className="p-6 bg-[#e8e8e840]">
                   <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{product.description}</p>
-                  <p className="text-2xl font-bold text-primary mb-4">{product.price}</p>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    {product.description}
+                  </p>
+                  <p className="text-2xl font-bold text-primary mb-4">
+                    {product.price}
+                  </p>
 
                   <div className="mb-4">
-                    <p className="text-sm font-medium mb-2">Available Finishes:</p>
+                    <p className="text-sm font-medium mb-2">
+                      Available Finishes:
+                    </p>
                     <div className="flex flex-wrap gap-1">
                       {product.finish.map((finish, i) => (
-                        <div key={i} variant="outline" className="text-xs border-1 border-gray-300 p-1 rounded-sm">
+                        <div
+                          key={i}
+                          variant="outline"
+                          className="text-xs border-1 border-gray-300 p-1 rounded-sm"
+                        >
                           {finish}
                         </div>
                       ))}
@@ -387,14 +463,18 @@ export default function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-div">
+      <section id="about" className="py-20 bg-[#fbf9fa] bg-div">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 text-gray-700 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold mb-6">25+ Years of Excellence</h2>
+              <h2 className="text-4xl font-bold mb-6">
+                25+ Years of Excellence
+              </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Since 1998, Luxe Stone Exports has been the trusted partner for architects, contractors, and designers
-                worldwide. We source the finest natural stones from quarries across Italy, Spain, Turkey, and beyond.
+                Since 1998, Luxe Stone Exports has been the trusted partner for
+                architects, contractors, and designers worldwide. We source the
+                finest natural stones from quarries across Italy, Spain, Turkey,
+                and beyond.
               </p>
 
               <div className="grid grid-cols-2 gap-6 mb-8">
@@ -412,17 +492,19 @@ export default function App() {
                     <div className="text-3xl font-bold text-primary mb-2 group-hover:text-primary/80 transition-colors">
                       {stat.number}
                     </div>
-                    <div className="text-muted-foreground text-sm">{stat.label}</div>
+                    <div className="text-muted-foreground text-sm">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
 
-              <button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 p-2 rounded-md py-1 text-xs hover:scale-105 transform transition-all duration-200"
-              >
-                Learn More About Us
-              </button>
+              {/* <button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 p-2 rounded-md py-1 text-xs hover:scale-105 transform transition-all duration-200"
+                >
+                  Learn More About Us
+                </button> */}
             </div>
             <div className="relative group">
               <img
@@ -431,7 +513,7 @@ export default function App() {
                 className="rounded-lg shadow-2xl group-hover:scale-105 transform transition-all duration-500"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg group-hover:scale-110 transform transition-all duration-300">
-                <Shield className="h-8 w-8 mb-2" /> 
+                <Shield className="h-8 w-8 mb-2" />
                 <div className="font-semibold">ISO Certified</div>
                 <div className="text-sm opacity-90">Quality Guaranteed</div>
               </div>
@@ -445,7 +527,9 @@ export default function App() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-muted-foreground">Trusted by leading architects and contractors worldwide</p>
+            <p className="text-xl text-muted-foreground">
+              Trusted by leading architects and contractors worldwide
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -474,7 +558,10 @@ export default function App() {
                 project: "Singapore Office Complex",
               },
             ].map((testimonial, index) => (
-              <div key={index} className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+              <div
+                key={index}
+                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+              >
                 <div className="p-0">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -485,10 +572,14 @@ export default function App() {
                       />
                     ))}
                   </div>
-                  <p className="text-muted-foreground mb-6 italic">"{testimonial.content}"</p>
+                  <p className="text-muted-foreground mb-6 italic">
+                    "{testimonial.content}"
+                  </p>
                   <div>
                     <div className="font-semibold">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </div>
                     <div
                       variant="outline"
                       className="mt-2 group-hover:scale-105 transform transition-all duration-200"
@@ -504,15 +595,21 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-div">
+      <section id="contact" className="py-20 bg-[#fbf9fa] bg-div">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
-            <p className="text-xl text-muted-foreground">Get in touch with our experts for personalized consultation</p>
+            <h2 className="text-4xl font-bold mb-4">
+              Ready to Start Your Project?
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Get in touch with our experts for personalized consultation
+            </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-semibold mb-6">
+                Contact Information
+              </h3>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-3 group hover:scale-105 transform transition-all duration-200">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -520,7 +617,9 @@ export default function App() {
                   </div>
                   <div>
                     <div className="font-semibold">WhatsApp</div>
-                    <div className="text-muted-foreground">+1 (555) 123-4567</div>
+                    <div className="text-muted-foreground">
+                      +1 (555) 123-4567
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 group hover:scale-105 transform transition-all duration-200">
@@ -529,17 +628,19 @@ export default function App() {
                   </div>
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-muted-foreground">info@luxestoneexports.com</div>
+                    <div className="text-muted-foreground">
+                      info@tronetta.com
+                    </div>
                   </div>
                 </div>
               </div>
               <button
                 size="lg"
-                className="w-full bg-green-600 hover:bg-green-700 text-white hover:scale-105 transform transition-all duration-200 animate-pulse"
+                className="w-full flex items-center justify-center py-2 rounded md bg-green-600 hover:bg-green-700 text-white hover:scale-105 transform transition-all duration-200 animate-pulse"
                 onClick={() =>
                   window.open(
                     "https://wa.me/15551234567?text=Hi, I'm interested in your marble and tiles collection. Can you help me with a quote?",
-                    "_blank",
+                    "_blank"
                   )
                 }
               >
@@ -576,7 +677,7 @@ export default function App() {
                   <button
                     type="submit"
                     size="lg"
-                    className="w-full bg-primary hover:bg-primary/90 hover:scale-105 transform transition-all duration-200"
+                    className="w-full rounded-md py-2 bg-primary hover:bg-primary/90 hover:scale-105 transform transition-all duration-200"
                   >
                     Send Quote Request
                   </button>
@@ -594,12 +695,15 @@ export default function App() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">L</span>
+                  <span className="text-primary-foreground font-bold text-lg">
+                    L
+                  </span>
                 </div>
-                <span className="text-xl font-bold">Luxe Stone Exports</span>
+                <span className="text-xl font-bold">Tronetta</span>
               </div>
               <p className="text-accent-foreground/80 mb-4">
-                Premium marble and tiles exporter serving luxury projects worldwide since 1998.
+                Premium marble and tiles exporter serving luxury projects
+                worldwide since 1998.
               </p>
             </div>
             <div>
@@ -624,33 +728,33 @@ export default function App() {
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-accent-foreground/80">
                 <li>WhatsApp: +1 (555) 123-4567</li>
-                <li>Email: info@luxestoneexports.com</li>
+                <li>Email: info@tronetta.com</li>
                 <li>24/7 Customer Support</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-accent-foreground/20 mt-8 pt-8 text-center text-accent-foreground/60">
-            <p>&copy; 2024 Luxe Stone Exports. All rights reserved.</p>
+            <p>&copy; 2024 Tronetta. All rights reserved.</p>
           </div>
         </div>
       </footer>
 
       {/* Enhanced WhatsApp Floating button with pulse animation */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed  bottom-6 right-6 z-50">
         <button
           size="lg"
-          className="rounded-full w-16 h-16 bg-green-600 hover:bg-green-700 shadow-lg hover:scale-110 transform transition-all duration-300 animate-bounce"
+          className="rounded-full w-16 h-16 bg-green-600 hover:bg-green-700 shadow-lg hover:scale-110 transform transition-all duration-300 flex justify-center items-center animate-bounce"
           onClick={() =>
             window.open(
               "https://wa.me/15551234567?text=Hi, I'm interested in your marble and tiles collection. Can you help me with a quote?",
-              "_blank",
+              "_blank"
             )
           }
         >
           <MessageCircle className="h-8 w-8" />
+          {/* <div className="absolute top-1 right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div> */}
         </button>
-        <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
       </div>
     </div>
-  )
+  );
 }
